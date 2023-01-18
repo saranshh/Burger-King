@@ -2,11 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger King</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,7 +34,6 @@
        <h1>Burger King</h1>
        <h2>Food The <br> Most Precious Things</h2>
        <a href="#" class="btn">Today's Menu</a>
-
      </div>
 
      <div class="home-img">
@@ -71,7 +72,7 @@
          </div>
          <h2>Chicken Burger</h2>
          <h3>Tasty Food</h3>
-         <span>$11.00</span>
+         <span id="priceOne">$11.00</span>
          <i id="boxOne" class='bx bx-cart-alt'></i>
        </div>
 
@@ -81,7 +82,7 @@
          </div>
          <h2>Special Beef Burger</h2>
          <h3>Tasty Food</h3>
-         <span>$18.00</span>
+         <span id="priceTwo">$18.00</span>
          <i id="boxTwo" class='bx bx-cart-alt'></i>
 
        </div>
@@ -92,7 +93,7 @@
          </div>
          <h2>Chicken Fry Pack</h2>
          <h3>Tasty Food</h3>
-         <span>$25.00</span>
+         <span id="priceThree">$25.00</span>
          <i id="boxThree" class='bx bx-cart-alt'></i>
 
        </div>
@@ -138,7 +139,7 @@
    <!-- Call to action -->
    <section class="cta">
      <h2>We make quality food <br> Everyday</h2>
-     <a href="#" class="btn">Let's Talk</a>
+     <a href="mailto: saranshchaurasia9@gmail.com" class="btn">Let's Talk</a>
    </section>
 
 <!--  Footer Start -->
@@ -199,41 +200,52 @@
   </body>
   <script type="text/javascript">
 
-  // document.getElementById("cl").addEventListener("mouseover", function() {
-  //     document.getElementById("cl").style.backgroundColor = "green";
-  //
-  // });
-
   function myCartOne(){
     document.getElementById("boxOne").style.backgroundColor = "#feeee7";
     document.getElementById("boxOne").style.color = "#ff702a";
+    document.getElementById("priceOne").style.color = "#feeee7";
   }
 
   function remCartOne(){
     document.getElementById("boxOne").style.backgroundColor = "#ff702a";
     document.getElementById("boxOne").style.color = "#feeee7";
+    document.getElementById("priceOne").style.color = "#ff702a";
   }
 
   function myCartTwo(){
     document.getElementById("boxTwo").style.backgroundColor = "#feeee7";
     document.getElementById("boxTwo").style.color = "#ff702a";
+    document.getElementById("priceTwo").style.color = "#feeee7";
   }
 
   function remCartTwo(){
     document.getElementById("boxTwo").style.backgroundColor = "#ff702a";
     document.getElementById("boxTwo").style.color = "#feeee7";
+    document.getElementById("priceTwo").style.color = "#ff702a";
   }
 
   function myCartThree(){
     document.getElementById("boxThree").style.backgroundColor = "#feeee7";
     document.getElementById("boxThree").style.color = "#ff702a";
+    document.getElementById("priceThree").style.color = "#feeee7";
   }
 
   function remCartThree(){
     document.getElementById("boxThree").style.backgroundColor = "#ff702a";
     document.getElementById("boxThree").style.color = "#feeee7";
+    document.getElementById("priceThree").style.color = "#ff702a";
   }
 
+  let menu = document.querySelector("#menu-icon");
+  let navbar = document.querySelector(".navbar");
+
+  menu.addEventListener("click", function() {
+    navbar.classList.toggle("active");
+  });
+
+  window.onscroll = () => {
+    navbar.classList.remove("active");
+  };
 
   </script>
 
